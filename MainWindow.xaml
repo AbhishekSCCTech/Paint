@@ -10,7 +10,7 @@
         <ToolBar HorizontalAlignment="Center" Height="34" VerticalAlignment="Top" Width="800">
             <Button Content="Clear" Width="37" Height="26" VerticalAlignment="Top" Click="Button_Click"/>
             <Label Content="Brush Size:" Width="69" Height="32"/>
-            <ComboBox x:Name="BrushSize" HorizontalAlignment="Left" Width="40">
+            <ComboBox x:Name="BrushSize" HorizontalAlignment="Left" Width="40" SelectionChanged="StrokeThickness_SelectionChanged">
                 <ComboBoxItem>2</ComboBoxItem>
                 <ComboBoxItem>4</ComboBoxItem>
                 <ComboBoxItem>6</ComboBoxItem>
@@ -18,7 +18,7 @@
                 <ComboBoxItem>10</ComboBoxItem>
             </ComboBox>
             <Label Content="Brush Color:" Height="26"/>
-            <ComboBox x:Name="BrushColor" HorizontalAlignment="Left" Width="60">
+            <ComboBox x:Name="BrushColor" HorizontalAlignment="Left" Width="60" SelectionChanged="BrushColor_SelectionChanged">
                 <ComboBoxItem>Red</ComboBoxItem>
                 <ComboBoxItem>Green</ComboBoxItem>
                 <ComboBoxItem>Yellow</ComboBoxItem>
@@ -26,7 +26,7 @@
                 <ComboBoxItem>Black</ComboBoxItem>
             </ComboBox>
             <Label Content="Mode:" Width="47" VerticalAlignment="Center"/>
-            <ComboBox x:Name="Mode" HorizontalAlignment="Left" Width="80">
+            <ComboBox x:Name="Mode" HorizontalAlignment="Left" Width="80" SelectionChanged="Mode_SelectionChanged">
                 <ComboBoxItem>Free Draw</ComboBoxItem>
                 <ComboBoxItem>Straight Line</ComboBoxItem>
             </ComboBox>
@@ -34,6 +34,10 @@
         <Canvas x:Name="Canvas" Margin="5,39,5,5"
         MouseDown="Canvas_MouseDown"
         MouseMove="Canvas_MouseMove"
-        MouseUp="Canvas_MouseUp"/>
+        MouseUp="Canvas_MouseUp">
+            <Canvas.Background>
+                <SolidColorBrush Color="Green" Opacity="0"/>
+            </Canvas.Background>
+        </Canvas>
     </Grid>
 </Window>
